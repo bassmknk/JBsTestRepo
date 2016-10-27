@@ -5,7 +5,7 @@
 ## collect and log the message and summary data. Then create & run & blacklist
 ## iptables rule. Also adds the rule to a black-list script
 ##
-## Created 02-08-2009 by JB (bassmknk@gmail.com)
+## Modified 10-27-2016 by JB (bassmknk@gmail.com)
 
 ## Call perl mods:
 use Getopt::Std;
@@ -99,7 +99,7 @@ while ($vlmline = <VLM>)
 
 	if ($vlmline =~/^$timestamp.*sshd\[\d+\]: $errstr ((\d+\.){3}\d+):.*/)
 	   {
-#		if ($debug) { print "Match: $vlmline"; }
+		if ($debug) { print "Match: $vlmline"; }
 		$matchcnt++; 
 		if (exists($iparray{$1})) {
 		   $iparray{$1}++;
